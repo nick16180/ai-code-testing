@@ -3,6 +3,10 @@ name = "hello-api"
 version = "1.0.0"
 description = "A simple hello endpoint API running on uv"
 requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.143.0",
+    "uvicorn>=0.54.0",
+]
 
 [tool.uv]
 dev-dependencies = []
