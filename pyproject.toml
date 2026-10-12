@@ -1,12 +1,11 @@
 [project]
 name = "hello-api"
 version = "1.0.0"
-description = "A simple hello endpoint API running on uv"
-requires-python = ">=3.12"
+description = "A FastAPI hello endpoint API running on uv"
 dependencies = [
-    "fastapi[standard]>=0.143.0",
-    "uvicorn>=0.54.0",
+    "fastapi[standard]>=0.143",
+    "uvicorn>=0.54",
 ]
 
-[tool.uv]
-dev-dependencies = []
+[dependency-groups]
+dev = []
