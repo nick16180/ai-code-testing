@@ -29,14 +29,6 @@ async def status_endpoint():
     return {"status": "healthy", "service": "hello-api"}
 
 
-# Middleware for timing requests
-import time
-
-@app.middleware("http")
-async def add_process_time_header(request, call_next):
-    start_time = time.monotonic()
-    response = await call_next(request)
-    processing_time = time.monotonic() - start_time
-    response.headers["X-Processing-Time"] = str(processing_time)
-    return response
-
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8005, reload=True)
